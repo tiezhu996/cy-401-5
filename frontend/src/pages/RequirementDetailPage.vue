@@ -96,7 +96,7 @@ async function submitBid() {
     return;
   }
   await bidStore.submitBid({ ...bidForm, requirementId: props.id });
-  await bidStore.fetchByRequirement(auth.user.value?.id || props.id);
+  await bidStore.fetchByRequirement(props.id);
   bidForm.proposal = '';
   ElMessage.success('报价已提交');
 }
